@@ -32,7 +32,8 @@ client.on('message', msg => {
                     break;
                 
                 case 'youtube':
-                    msg.reply(`https://google.com/results?search_query=${searchParameters.replace(' ', '+')}`);
+                    msg.reply(`https://youtube.com/results?search_query=${searchParameters.replace(' ', '+')}`);
+                    break;
 
                 default:
                     msg.reply('please provide the search enigine you wish to use. \navailable google and youtube');

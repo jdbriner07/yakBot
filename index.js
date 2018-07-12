@@ -30,7 +30,11 @@ client.on('message', msg => {
                     const [bleh, searchParameters] = msg.content.split('"');
                     msg.reply(`https://google.com/search?q=${searchParameters.replace(' ', '+')}`);
                     break;
-            
+                
+                case 'youtube':
+                    const [bleh, searchParameters] = msg.content.split('"');
+                    msg.reply(`https://google.com/results?search_query=${searchParameters.replace(' ', '+')}`);
+
                 default:
                     msg.reply('please provide the search enigine you wish to use. available google and youtube');
                     break;

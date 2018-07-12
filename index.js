@@ -21,22 +21,21 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  const [yak, command, parameter] = msg.content.split(' ');
+  let [yak, command, parameter] = msg.content.split(' ');
   if (yak === 'yak') {
     switch (command) {
         case 'search':
+            let [bleh, searchParameters] = msg.content.split('"');
             switch (parameter) {
                 case 'google':
-                    const [bleh, searchParameters] = msg.content.split('"');
                     msg.reply(`https://google.com/search?q=${searchParameters.replace(' ', '+')}`);
                     break;
                 
                 case 'youtube':
-                    const [bleh, searchParameters] = msg.content.split('"');
                     msg.reply(`https://google.com/results?search_query=${searchParameters.replace(' ', '+')}`);
 
                 default:
-                    msg.reply('please provide the search enigine you wish to use. available google and youtube');
+                    msg.reply('please provide the search enigine you wish to use. \navailable google and youtube');
                     break;
             }
             break;
